@@ -10,8 +10,8 @@ Discount Service Tamyuz is a Spring Boot Application to manage **products, users
 - [Technologies](#technologies)  
 - [Prerequisites](#prerequisites)  
 - [Setup](#setup)  
-- [Swagger](#swagger)  
-- [FLOW] (#Discount-Service-Tamyuz: User Perspective Flow) 
+- [Swagger](#swagger)
+- [Service Flow](#service-flow)
 
 ---
 
@@ -77,13 +77,13 @@ mvn clean package
 java -jar target/discount-service-tamyuz-0.0.1-SNAPSHOT.jar --spring.profiles.active=docker
 
 
-## SWAGGER
+## Swagger
 
 after the service is up, access the swagger at below to check all the endpoints:
 http://localhost:8888/swagger-ui/index.html
 
 
-## Discount-Service-Tamyuz: User Perspective Flow
+## Service Flow
 
 This section explains how a user interacts with the **Discount Service Tamyuz** application, step by step, from login to accessing secured endpoints.
 
