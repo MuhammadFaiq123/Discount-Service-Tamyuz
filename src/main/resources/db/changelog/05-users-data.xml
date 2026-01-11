@@ -1,0 +1,40 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet author="muhammad.faiq" id="20260109-02-insert-users">
+
+        <insert tableName="users">
+            <column name="email" value="admin@example.com"/>
+            <column name="password"
+                    value="$2a$12$3cit7r7rbCykVHpi4ys2x.kNDw3kkg.2Yn3ntjNtdZqmXgmhR79Ni"/> <!--password123-->
+            <column name="role" value="ROLE_ADMIN"/>
+            <column name="created_at" valueDate="NOW()"/>
+            <column name="updated_at" valueDate="NOW()"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="email" value="user@example.com"/>
+            <column name="password"
+                    value="$2a$12$3cit7r7rbCykVHpi4ys2x.kNDw3kkg.2Yn3ntjNtdZqmXgmhR79Ni"/> <!--password123-->
+            <column name="role" value="ROLE_USER"/>
+            <column name="created_at" valueDate="NOW()"/>
+            <column name="updated_at" valueDate="NOW()"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="email" value="premium@example.com"/>
+            <column name="password"
+                    value="$2a$12$3cit7r7rbCykVHpi4ys2x.kNDw3kkg.2Yn3ntjNtdZqmXgmhR79Ni"/> <!--password123-->
+            <column name="role" value="ROLE_PREMIUM_USER"/>
+            <column name="created_at" valueDate="NOW()"/>
+            <column name="updated_at" valueDate="NOW()"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
