@@ -2,6 +2,7 @@
 
 Discount Service Tamyuz is a Spring Boot Application to manage **products, users, and orders**, including **dynamic discount computation** based on user type and order amount. The application uses JWT-based authentication, role-based authorization, and exposes Actuator endpoints for monitoring.
 
+Note: Postman collection is given in the root directory.
 ---
 
 ## Table of Contents
