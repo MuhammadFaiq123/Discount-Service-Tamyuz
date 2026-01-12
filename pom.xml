@@ -146,13 +146,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Mockito -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- Security Test -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -175,12 +168,21 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Micrometer Simple Registry for Actuator Metrics -->
+		<!-- Spring cache -->
 		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-core</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
 	</dependencies>
 
 	<!-- ========================= -->

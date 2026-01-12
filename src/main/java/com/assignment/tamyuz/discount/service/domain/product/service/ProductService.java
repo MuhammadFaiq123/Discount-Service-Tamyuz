@@ -7,6 +7,9 @@ import com.assignment.tamyuz.discount.service.persistence.entity.Product;
 import com.assignment.tamyuz.discount.service.persistence.repository.ProductRepository;
 import com.assignment.tamyuz.discount.service.utils.PagedResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -44,12 +47,14 @@ public class ProductService {
         return toResponse(saved);
     }
 
+    @Cacheable(value = "products", key = "#id")
     public ProductResponse getById(Long id) {
         return productRepository.findById(id)
                 .map(this::toResponse)
                 .orElseThrow(() -> new NotFoundException("Product not found"));
     }
 
+    @CachePut(value = "products", key = "#id")
     public ProductResponse update(Long id, ProductRequest request) {
 
         Product product = findProductById(id);
@@ -62,6 +67,7 @@ public class ProductService {
         return toResponse(updated);
     }
 
+    @CacheEvict(value = "products", key = "#id")
     public void delete(Long id) {
         findProductById(id);
         productRepository.softDelete(id);
