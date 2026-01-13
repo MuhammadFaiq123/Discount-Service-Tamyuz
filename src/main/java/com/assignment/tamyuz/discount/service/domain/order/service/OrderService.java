@@ -29,7 +29,6 @@ import java.util.List;
 import static com.assignment.tamyuz.discount.service.utils.HelperUtils.toPagedResponse;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class OrderService {
 
@@ -39,7 +38,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
 
-
+    @Transactional
     public OrderResponse placeOrder(String userEmail, List<OrderItemRequest> requests) {
 
         User user = userRepository.findByEmail(userEmail)
