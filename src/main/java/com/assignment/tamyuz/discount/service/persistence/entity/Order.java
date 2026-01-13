@@ -26,7 +26,7 @@ public class Order {
     private User user;
     @Column(nullable = false)
     private BigDecimal orderTotal;
-    @OneToMany(mappedBy = "order", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderItem> items;
     @CreationTimestamp
     private Timestamp createdAt;
